@@ -1,0 +1,182 @@
+# Using container-based infrastructure
+# sudo: false
+# enable trusty beta
+sudo: required
+dist: trusty
+
+# 'bash' will define a generic environment without interfering environment
+# settings like "CC=gcc"
+language: bash
+
+# Only build the master branch
+branches:
+    only:
+        - master
+
+# Caching the downloaded src packages between several builds to save travis-ci
+# download time and bandwidth
+cache:
+    directories:
+        - $HOME/src
+        - $HOME/x-tools
+        # - $HOME/zlib-install
+        # - $HOME/openssl-install
+        # - $HOME/pcre-install
+        # - $HOME/libsodium-install
+        # - $HOME/mbedtls-install
+        # - $HOME/libev-install
+
+
+# Installing needed dependencies
+addons:
+    apt:
+        packages:
+            - bison
+            - flex
+            - gperf
+            # - libncurses5
+            # - libncurses5-dev
+            # - libncursesw5
+            # - libncursesw5-dev
+            - texinfo
+            - help2man
+            - asciidoc
+            - xmlto
+            - libgmp-dev 
+            - nettle-dev
+            # - libtool
+            # - autogen
+            # - automake
+            - libstdc++6
+            - lib32stdc++6 
+            - net-tools
+            - perl
+            # - python
+            
+            - gcc-multilib
+            - g++-multilib
+            - lib32z1-dev
+            # - gconf
+            # - pkg-config
+
+# Handle git submodules yourself
+git:
+    submodules: false
+    
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+# before_install:
+    # - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+    # - git submodule update --init --recursive
+    # - sudo apt-get update -qq
+    # - sudo apt-get install libpcre3 libpcre3-dev -y
+    
+# Building crosstool-NG core
+# keep these on at all times because it is fast
+install:
+    - pwd
+
+# Here is the list of all the standard samples tracked
+# by the continuous integration system
+env:
+    matrix:
+        # - export PATH=$HOME/x-tools/mipsel-unknown-linux-uclibc/bin:$PATH
+        # - BROADCOM_SDK=6
+
+        - TT_BUILD=r2e BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2c BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2d BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2g BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2t BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2b BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2o BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2z BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2v BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2m BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2i BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2j BROADCOM_SDK=src-rt 
+        # - TT_BUILD=r2f BROADCOM_SDK=src-rt 
+
+        # - TT_BUILD=e1000v2f BROADCOM_SDK=src-rt
+        # - TT_BUILD=e1000v2i BROADCOM_SDK=src-rt
+        # - TT_BUILD=e1200v1f BROADCOM_SDK=src-rt
+        # - TT_BUILD=e1200v1i BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=n60e BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60c BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60d BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60g BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60t BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60b BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60o BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60z BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60i BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60j BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60v BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60m BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=n64e BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64c BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64d BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64g BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64u BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64t BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64b BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64o BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64v BROADCOM_SDK=src-rt
+        # - TT_BUILD=n64m BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=rtn53 BROADCOM_SDK=src-rt
+        # - TT_BUILD=e2500 BROADCOM_SDK=src-rt
+        # - TT_BUILD=e3200 BROADCOM_SDK=src-rt
+        # - TT_BUILD=n6 BROADCOM_SDK=src-rt
+        # - TT_BUILD=n60 BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=v2e BROADCOM_SDK=src-rt
+        # - TT_BUILD=v2z BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=r64e BROADCOM_SDK=src-rt
+        # - TT_BUILD=r64z BROADCOM_SDK=src-rt
+
+        # - TT_BUILD=r2q3m BROADCOM_SDK=src-rt
+        # - TT_BUILD=r2q3v BROADCOM_SDK=src-rt
+        # - TT_BUILD=hg320 BROADCOM_SDK=src-rt
+        # - TT_BUILD=hg32064k BROADCOM_SDK=src-rt
+        # # include:
+        # #     - BROADCOM_SDK=6
+        # - TT_BUILD=r64e BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=r64z BROADCOM_SDK=src-rt-6.x
+
+        # - TT_BUILD=ac66e BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=ac66z BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=w1800re BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=w1800rz BROADCOM_SDK=src-rt-6.x
+
+        # - TT_BUILD=r6300e BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=r6300z BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=wndr4500e BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=wndr4500z BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=wndr4500v2e BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=wndr4500v2z BROADCOM_SDK=src-rt-6.x
+        # - TT_BUILD=n80o BROADCOM_SDK=src-rt-6.x
+
+
+    global:
+        - secure: cc0rXvtZbBOTIoLZ8y3yb0OL/QX6TEuihW0Sodu7G3KySs83EgwYtPnqy4ELoTxhoCFISiAYv2eSu5Hqet0KwlZriwywtM6Dqmo2GqepQGCKSpMKYb4DE956PC13ccK2SDfAGMJN6sun70jK+TWXpy5GGjhHtRZcSnKB/VvoM98/5A4aqdeXFXPt+i10mXqt/IuPjYkwE5dfRUYa3b3ypSskGA2jmf2623IvwKxIjd7T9hrYvpqXwKYyedCrWo+ytyswxPG75WDUxPDlceEKH8v/tIjJv+jdtzaILUt4SPEOSDC3XagIVQnC/EoOKwu4EmhDbfWkEbzF/pRMyO2sMmvsjxLupCbryMV8ug5A/i5N6YVHQ8aXvEa9sm57RTwh3s9S3gavSdidIYuaTefEhqx+Jrw8VQsVMWImWxq/RpbIWeCfA0Ff/DYo6f6gnFEX/f8wtYn8DrOiM1RKqXJrQCyZ4A40tEr1GdX2R9cz2eC0ub0ZVA6yNdaxF/4dkfvkhAjYbuCTnqtmft9GYDL9KYW+fGlKCdyOl9eN+V9DWqc60nSjx0GuLVBZ82pcnWYi6YcC4N70imwcHisMcyDlCqY3Mmh3gJy/cw4QmD4Ix8L1lYiZ43dV/ECVfCjZBIe5vdhMa29nvjc1IBtT5xnSDPGgQJUdjIJY3Ejd2FtTHfc=
+
+        - $BROADCOM_SDK=src-rt-6.x.4708
+        
+# Building the standard samples
+script:
+    # - . ls -l $HOME
+    - . $TRAVIS_BUILD_DIR/.travis.sh      # Load the travis environment
+    - echo ============================
+    - pre_build_prep  > /dev/null
+    - build_tomato
+
+# On failure displaying the last lines of the log file
+after_failure:
+    - echo ============= tomato ===============
+    - tail -n 1000 ~/tomato.txt
+    
+    
+# after_success: . $TRAVIS_BUILD_DIR/update-gh-pages.sh
