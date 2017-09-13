@@ -117,6 +117,8 @@ env:
     global:
         - secure: MU4rMTYYHd8YZChUDNcfyEnHO9v4h45oPhl5FDLnZ7mGMSyQOxWaVzEqCBXBQDTbF0kN1guF4aBydCrILDkhHk/KZ3313nQBdhyjJccxhwDcJMmZZ+tbRpquInLTEQxQyG3XZ4DRm4nQRYp69AJoaWth6uWAR+VXOL57ub19Yt/wAB6bJ6NOsbR5C6sAL7xeZ0k9UbZleHVO1lpWdFofYfEqwemQ7VHWz9xYE7hAatFgUWoGnyA8ju7R3NnsEw5cksXicyU/R7EGDdN4BRdgj/Aqy0TsitJlLl7WfkpmqLgkn8L6ad3UdojPw3mb/LOQ9q8hHMCwXOtJAV0jWXXERlQjaNNACIis590cYoE3/LtsJfYpnD5F8t6fbVyUjval0mGx9jx81EEyzi+N4AqWLGIscnuR3ZgbW+bUlgLJ5Vm5B70bt2Cs4YaPLWqNLxrojDdjyFMr8CJzsOiBASZmj3wuCWnV+hyRnwZ/Eo1a0RHkuXy+6DbqfcunLIzATo4P0xAfVHhH1XtaqCu5NXXVtsvAK3AlesAW24ozXi726RXwz3b95rYQTgf9Ho+bP7vzD+I496xHFRu/Rceko+4isAqr274meEFw1Vzz5tUslWcmkYL7r7ve3pmmxbOguy25J5C2Z/Jov/h6FR07pK3TFtK281KCGcxJgQFis8oTErE=
 
+        - BROADCOM_SDK=src-rt-6.x.4708
+
 # Building the standard samples
 script:
     # - . ls -l $HOME

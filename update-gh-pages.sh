@@ -22,7 +22,7 @@
   sleep $x
   
   #using token clone gh-pages branch
-  git clone --depth 1 --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oglopss/tomato-ci-jekyll.git  gh-pages-$TT_BUILD > /dev/null
+  git clone --depth 1 --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oglopss/tomato-arm-ci-jekyll.git  gh-pages-$TT_BUILD > /dev/null
 
 
   cd gh-pages-$TT_BUILD
