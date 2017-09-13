@@ -38,7 +38,7 @@ sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.
 rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x.4708/router/www/ 
 
 # fix cannot touch config-h.in: Permission denied
-chmod -R +w ~/tomato-arm
+chmod -R +rw ~/tomato-arm
 
 echo ========== bison ==========
 apt-cache showpkg bison
