@@ -63,6 +63,7 @@ addons:
             # - libelf1-32bit
             - uuid-dev
             - libuuid1
+            - uuid-runtime
             - libltdl-dev
             
 
