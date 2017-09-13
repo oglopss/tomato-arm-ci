@@ -30,7 +30,7 @@ sudo pip install pyOpenSSL ndg-httpsclient pyasn1 -U
 sudo pip install  urllib3 -U
 sudo pip install requests -U
 
-git clone --depth 1  https://oglop@bitbucket.org/oglop/tomato-arm.git
+git clone --depth 1 -b fedora https://oglop@bitbucket.org/oglop/tomato-arm.git
 git clone --depth 1 -b v140-arm https://github.com/oglops/tomato-arm-gui.git
 
 sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm
