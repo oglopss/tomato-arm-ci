@@ -37,6 +37,9 @@ sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.
 
 rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x.4708/router/www/ 
 
+# fix cannot touch config-h.in: Permission denied
+chmod -R +w ~/tomato-arm
+
 echo ========== bison ==========
 apt-cache showpkg bison
 
@@ -272,7 +275,7 @@ build_tomato()
     elif [ "$TT_BUILD" == "hg32064k" ] || [ "$TT_BUILD" == "hg320" ]; then
         make V1=RT-N5x-CN- V2=-140-hg320  $TT_BUILD > /dev/null &
     else
-        sudo make V1=RT-N5x-CN- V2=-140 $TT_BUILD > /dev/null  &
+        make V1=RT-N5x-CN- V2=-140 $TT_BUILD > /dev/null  &
     fi
     
     local build_pid=$!
