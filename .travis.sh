@@ -227,6 +227,12 @@ build_tomato()
 {
     echo ================= BROADCOM_SDK =====================
     echo $BROADCOM_SDK
+    
+    echo ================= uuid =====================
+    ls -l /usr/include
+    echo ================= uuid2 =====================
+    ls -l /usr/include/uuid/
+    
     # which cp
 
 
