@@ -59,6 +59,9 @@ addons:
             # - gconf
             # - pkg-config
 
+            - libelf1
+            - libelf1-32bit
+
 # Handle git submodules yourself
 git:
     submodules: false
@@ -82,7 +85,12 @@ env:
         # - export PATH=$HOME/x-tools/mipsel-unknown-linux-uclibc/bin:$PATH
         # - BROADCOM_SDK=6
 
-        - TT_BUILD=r2e BROADCOM_SDK=src-rt
+        - TT_BUILD=ac68e
+
+        - TT_BUILD=n18e
+
+        - TT_BUILD=r7000e
+
         # - TT_BUILD=r2c BROADCOM_SDK=src-rt
         # - TT_BUILD=r2d BROADCOM_SDK=src-rt
         # - TT_BUILD=r2g BROADCOM_SDK=src-rt

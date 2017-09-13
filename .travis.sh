@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin
+export PATH=$PATH:/opt/brcm-arm/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/brcm-arm/lib:/usr/local/lib:/usr/lib
 
 echo ========== custom path ============
 echo $PATH
@@ -32,7 +33,7 @@ sudo pip install requests -U
 git clone --depth 1  https://oglop@bitbucket.org/oglop/tomato-arm.git
 git clone --depth 1 -b v140-arm https://github.com/oglops/tomato-arm-gui.git
 
-sudo ln -s ~/tomato-arm/tools/brcm /opt/brcm
+sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm
 
 rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x.4708/router/www/ 
 
