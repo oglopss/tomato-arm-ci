@@ -62,6 +62,7 @@ addons:
             - libelf1:i386
             # - libelf1-32bit
             - uuid-dev
+            - libltdl-dev
 
 # Handle git submodules yourself
 git:
