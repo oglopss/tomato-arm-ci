@@ -86,92 +86,35 @@ env:
         # - BROADCOM_SDK=6
 
         - TT_BUILD=ac68e
+        - TT_BUILD=ac68z
+        # - TT_BUILD=n18e
+        # - TT_BUILD=n18z
+        # - TT_BUILD=r7000e
 
-        - TT_BUILD=n18e
+        # - TT_BUILD=dir868l
 
-        - TT_BUILD=r7000e
+        # - TT_BUILD=r7000e
+        - TT_BUILD=r7000z
+        - TT_BUILD=r6400e
+        # - TT_BUILD=r6400z
+        # - TT_BUILD=r7000init
+        # - TT_BUILD=r6250init
+        # - TT_BUILD=r6300v2init
+        # - TT_BUILD=r6400init
 
-        # - TT_BUILD=r2c BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2d BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2g BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2t BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2b BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2o BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2z BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2v BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2m BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2i BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2j BROADCOM_SDK=src-rt 
-        # - TT_BUILD=r2f BROADCOM_SDK=src-rt 
+        - TT_BUILD=r1do
 
-        # - TT_BUILD=e1000v2f BROADCOM_SDK=src-rt
-        # - TT_BUILD=e1000v2i BROADCOM_SDK=src-rt
-        # - TT_BUILD=e1200v1f BROADCOM_SDK=src-rt
-        # - TT_BUILD=e1200v1i BROADCOM_SDK=src-rt
+        # - TT_BUILD=ws880e
+        # - TT_BUILD=ws880z
 
-        # - TT_BUILD=n60e BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60c BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60d BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60g BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60t BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60b BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60o BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60z BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60i BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60j BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60v BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60m BROADCOM_SDK=src-rt
+        # - TT_BUILD=wzr1750e
+        # - TT_BUILD=wzr1750z
 
-        # - TT_BUILD=n64e BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64c BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64d BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64g BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64u BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64t BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64b BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64o BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64v BROADCOM_SDK=src-rt
-        # - TT_BUILD=n64m BROADCOM_SDK=src-rt
-
-        # - TT_BUILD=rtn53 BROADCOM_SDK=src-rt
-        # - TT_BUILD=e2500 BROADCOM_SDK=src-rt
-        # - TT_BUILD=e3200 BROADCOM_SDK=src-rt
-        # - TT_BUILD=n6 BROADCOM_SDK=src-rt
-        # - TT_BUILD=n60 BROADCOM_SDK=src-rt
-
-        # - TT_BUILD=v2e BROADCOM_SDK=src-rt
-        # - TT_BUILD=v2z BROADCOM_SDK=src-rt
-
-        # - TT_BUILD=r64e BROADCOM_SDK=src-rt
-        # - TT_BUILD=r64z BROADCOM_SDK=src-rt
-
-        # - TT_BUILD=r2q3m BROADCOM_SDK=src-rt
-        # - TT_BUILD=r2q3v BROADCOM_SDK=src-rt
-        # - TT_BUILD=hg320 BROADCOM_SDK=src-rt
-        # - TT_BUILD=hg32064k BROADCOM_SDK=src-rt
-        # # include:
-        # #     - BROADCOM_SDK=6
-        # - TT_BUILD=r64e BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=r64z BROADCOM_SDK=src-rt-6.x
-
-        # - TT_BUILD=ac66e BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=ac66z BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=w1800re BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=w1800rz BROADCOM_SDK=src-rt-6.x
-
-        # - TT_BUILD=r6300e BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=r6300z BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=wndr4500e BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=wndr4500z BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=wndr4500v2e BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=wndr4500v2z BROADCOM_SDK=src-rt-6.x
-        # - TT_BUILD=n80o BROADCOM_SDK=src-rt-6.x
-
-
+        # - TT_BUILD=ea6700e
+        # - TT_BUILD=ea6700z
+    
     global:
-        - secure: cc0rXvtZbBOTIoLZ8y3yb0OL/QX6TEuihW0Sodu7G3KySs83EgwYtPnqy4ELoTxhoCFISiAYv2eSu5Hqet0KwlZriwywtM6Dqmo2GqepQGCKSpMKYb4DE956PC13ccK2SDfAGMJN6sun70jK+TWXpy5GGjhHtRZcSnKB/VvoM98/5A4aqdeXFXPt+i10mXqt/IuPjYkwE5dfRUYa3b3ypSskGA2jmf2623IvwKxIjd7T9hrYvpqXwKYyedCrWo+ytyswxPG75WDUxPDlceEKH8v/tIjJv+jdtzaILUt4SPEOSDC3XagIVQnC/EoOKwu4EmhDbfWkEbzF/pRMyO2sMmvsjxLupCbryMV8ug5A/i5N6YVHQ8aXvEa9sm57RTwh3s9S3gavSdidIYuaTefEhqx+Jrw8VQsVMWImWxq/RpbIWeCfA0Ff/DYo6f6gnFEX/f8wtYn8DrOiM1RKqXJrQCyZ4A40tEr1GdX2R9cz2eC0ub0ZVA6yNdaxF/4dkfvkhAjYbuCTnqtmft9GYDL9KYW+fGlKCdyOl9eN+V9DWqc60nSjx0GuLVBZ82pcnWYi6YcC4N70imwcHisMcyDlCqY3Mmh3gJy/cw4QmD4Ix8L1lYiZ43dV/ECVfCjZBIe5vdhMa29nvjc1IBtT5xnSDPGgQJUdjIJY3Ejd2FtTHfc=
-
-        - $BROADCOM_SDK=src-rt-6.x.4708
+        - secure: MU4rMTYYHd8YZChUDNcfyEnHO9v4h45oPhl5FDLnZ7mGMSyQOxWaVzEqCBXBQDTbF0kN1guF4aBydCrILDkhHk/KZ3313nQBdhyjJccxhwDcJMmZZ+tbRpquInLTEQxQyG3XZ4DRm4nQRYp69AJoaWth6uWAR+VXOL57ub19Yt/wAB6bJ6NOsbR5C6sAL7xeZ0k9UbZleHVO1lpWdFofYfEqwemQ7VHWz9xYE7hAatFgUWoGnyA8ju7R3NnsEw5cksXicyU/R7EGDdN4BRdgj/Aqy0TsitJlLl7WfkpmqLgkn8L6ad3UdojPw3mb/LOQ9q8hHMCwXOtJAV0jWXXERlQjaNNACIis590cYoE3/LtsJfYpnD5F8t6fbVyUjval0mGx9jx81EEyzi+N4AqWLGIscnuR3ZgbW+bUlgLJ5Vm5B70bt2Cs4YaPLWqNLxrojDdjyFMr8CJzsOiBASZmj3wuCWnV+hyRnwZ/Eo1a0RHkuXy+6DbqfcunLIzATo4P0xAfVHhH1XtaqCu5NXXVtsvAK3AlesAW24ozXi726RXwz3b95rYQTgf9Ho+bP7vzD+I496xHFRu/Rceko+4isAqr274meEFw1Vzz5tUslWcmkYL7r7ve3pmmxbOguy25J5C2Z/Jov/h6FR07pK3TFtK281KCGcxJgQFis8oTErE=
         
 # Building the standard samples
 script:
@@ -187,4 +130,4 @@ after_failure:
     - tail -n 1000 ~/tomato.txt
     
     
-# after_success: . $TRAVIS_BUILD_DIR/update-gh-pages.sh
+after_success: . $TRAVIS_BUILD_DIR/update-gh-pages.sh
