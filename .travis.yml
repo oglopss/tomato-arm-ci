@@ -60,7 +60,7 @@ addons:
             # - pkg-config
 
             - libelf1
-            - libelf1-32bit
+            # - libelf1-32bit
 
 # Handle git submodules yourself
 git:
