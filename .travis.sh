@@ -160,6 +160,18 @@ sudo  make install
 # dirty hack to disable ncursesw
 sudo rm -rf /usr/include/ncursesw
 
+
+
+
+cd ~
+wget https://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz
+tar xf libuuid-1.0.3.tar.gz
+cd libuuid-1.0.3
+sh configure --prefix /usr
+make
+sudo  make install
+
+
 # cd ~
 # wget https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
 # tar xvf ncurses-6.0.tar.gz
@@ -233,6 +245,9 @@ build_tomato()
     echo ================= uuid2 =====================
     ls -l /usr/include/uuid/
     
+
+    # quick hack
+    sudo chmod 777 /usr/share/libtool/config-h.in
     # which cp
 
 
