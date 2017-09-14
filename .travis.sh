@@ -240,6 +240,7 @@ build_tomato()
     echo $BROADCOM_SDK
     
     echo ================= uuid =====================
+    pkg-config  --cflags uuid
     ls -l /usr/include
     echo ================= uuid2 =====================
     ls -l /usr/include/uuid/
