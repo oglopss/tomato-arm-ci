@@ -37,8 +37,7 @@ sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.
 
 rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x.4708/router/www/ 
 
-# fix cannot touch config-h.in: Permission denied
-chmod -R +rw ~/tomato-arm
+
 
 echo ========== bison ==========
 apt-cache showpkg bison
@@ -163,13 +162,13 @@ sudo rm -rf /usr/include/ncursesw
 
 
 
-cd ~
-wget https://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz
-tar xf libuuid-1.0.3.tar.gz
-cd libuuid-1.0.3
-sh configure --prefix /usr
-make
-sudo  make install
+# cd ~
+# wget https://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz
+# tar xf libuuid-1.0.3.tar.gz
+# cd libuuid-1.0.3
+# sh configure --prefix /usr
+# make
+# sudo  make install
 
 
 # cd ~
@@ -247,6 +246,7 @@ build_tomato()
     
 
     # quick hack
+    # fix cannot touch config-h.in: Permission denied
     sudo chmod 777 /usr/share/libtool/config-h.in
     # which cp
 
