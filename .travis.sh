@@ -241,6 +241,7 @@ build_tomato()
     
     echo ================= uuid =====================
     pkg-config  --cflags uuid
+    pkg-config  --static --cflags uuid
     ls -l /usr/include
     echo ================= uuid2 =====================
     ls -l /usr/include/uuid/
