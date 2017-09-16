@@ -253,9 +253,13 @@ build_tomato()
     echo ================= uuid2 =====================
     ls -l /usr/include/uuid/
     echo ================= uuid lib =====================
-    locate libuuid
+    # locate libuuid
+    ls -l /usr/lib
     
-
+    echo ================= uuid lib 2=====================
+    # locate libuuid
+    ls -l /usr/lib64
+    
     # quick hack
     # fix cannot touch config-h.in: Permission denied
     sudo chmod 777 /usr/share/libtool/config-h.in
