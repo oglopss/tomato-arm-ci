@@ -252,6 +252,8 @@ build_tomato()
     ls -l /usr/include
     echo ================= uuid2 =====================
     ls -l /usr/include/uuid/
+    echo ================= uuid lib =====================
+    locate libuuid
     
 
     # quick hack
