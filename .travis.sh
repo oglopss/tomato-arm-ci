@@ -245,6 +245,8 @@ build_tomato()
     echo $BROADCOM_SDK
     
     echo ================= uuid =====================
+    pkg-config --static --libs-only-l uuid
+    pkg-config --libs-only-l uuid
     pkg-config  --cflags uuid
     pkg-config  --static --cflags uuid
     ls -l /usr/include
