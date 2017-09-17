@@ -247,6 +247,11 @@ build_tomato()
     echo ================= BROADCOM_SDK =====================
     echo $BROADCOM_SDK
     
+    echo ================= uuid-dev =====================
+    dpkg-query -L uuid-dev
+    echo ================= libuuid1 =====================
+    dpkg-query -L libuuid1
+
     echo ================= uuid =====================
     ls -l /usr/lib64/pkgconfig/
     pkg-config --libs-only-L uuid
