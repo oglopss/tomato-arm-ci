@@ -248,7 +248,7 @@ build_tomato()
     echo $BROADCOM_SDK
     
     echo ================= uuid =====================
-    pkg-config -h
+    pkg-config --help
     pkg-config --path uuid
     pkg-config --static --libs-only-l uuid
     pkg-config --libs-only-l uuid
