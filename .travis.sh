@@ -253,7 +253,10 @@ build_tomato()
     dpkg-query -L libuuid1
 
     echo ================= uuid =====================
+    uname -i
     ls -l /usr/lib64/pkgconfig/
+    echo =============== lib =====================
+    ls -l /usr/lib/pkgconfig/
     pkg-config --libs-only-L uuid
     pkg-config --version
     pkg-config --print-provides uuid
