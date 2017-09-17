@@ -43,8 +43,8 @@ rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x
 # sudo mkdir /tt_include 
 # sudo cp -r /usr/include/uuid /tt_include 
 
-# sudo mkdir /tt_lib
-# sudo cp -r /lib/x86_64-linux-gnu/libuuid* /tt_lib 
+sudo mkdir /tt_lib
+sudo cp -r /lib/x86_64-linux-gnu/libuuid* /tt_lib 
 
 
 echo ========== bison ==========
