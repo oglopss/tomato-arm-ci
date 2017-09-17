@@ -260,6 +260,7 @@ build_tomato()
 
     cat /usr/lib/pkgconfig/uuid.pc
 
+    sudo ln -sf /lib/libuuid.so.1 /usr/lib/libuuid.so
 
     pkg-config --libs-only-L uuid
     pkg-config --version
@@ -276,15 +277,15 @@ build_tomato()
     # ls -l /usr/include/uuid/
     echo ================= uuid lib =====================
     # locate libuuid
-    # ls -l /usr/lib
+    ls -l /usr/lib
     
     echo ================= uuid lib 2 =====================
     # locate libuuid
-    # ls -l /lib/x86_64-linux-gnu/
+    ls -l /lib/x86_64-linux-gnu/
 
     echo ================= uuid lib 3 =====================
     # locate libuuid
-    # ls -l /lib
+    ls -l /lib
 
     
     # quick hack
