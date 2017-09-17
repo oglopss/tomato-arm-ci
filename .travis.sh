@@ -43,6 +43,9 @@ rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x
 sudo mkdir /tt_include 
 sudo cp -r /usr/include/uuid /tt_include 
 
+sudo mkdir /tt_lib
+sudo cp -r /lib/x86_64-linux-gnu/uuid* /tt_lib 
+
 
 echo ========== bison ==========
 apt-cache showpkg bison
@@ -257,9 +260,14 @@ build_tomato()
     # locate libuuid
     ls -l /usr/lib
     
-    echo ================= uuid lib 2=====================
+    echo ================= uuid lib 2 =====================
     # locate libuuid
-    ls -l /usr/lib64
+    ls -l /lib/x86_64-linux-gnu/
+
+    echo ================= uuid lib 3 =====================
+    # locate libuuid
+    ls -l /lib
+
     
     # quick hack
     # fix cannot touch config-h.in: Permission denied
