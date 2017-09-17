@@ -44,7 +44,7 @@ sudo mkdir /tt_include
 sudo cp -r /usr/include/uuid /tt_include 
 
 sudo mkdir /tt_lib
-sudo cp -r /lib/x86_64-linux-gnu/uuid* /tt_lib 
+sudo cp -r /lib/x86_64-linux-gnu/libuuid* /tt_lib 
 
 
 echo ========== bison ==========
@@ -248,6 +248,7 @@ build_tomato()
     echo $BROADCOM_SDK
     
     echo ================= uuid =====================
+    pkg-config -h
     pkg-config --path uuid
     pkg-config --static --libs-only-l uuid
     pkg-config --libs-only-l uuid
