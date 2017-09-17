@@ -254,9 +254,13 @@ build_tomato()
 
     echo ================= uuid =====================
     uname -i
-    ls -l /usr/lib64/pkgconfig/
+    # ls -l /usr/lib64/pkgconfig/
     echo =============== lib =====================
     ls -l /usr/lib/pkgconfig/
+
+    cat /usr/lib/pkgconfig/uuid.pc
+
+
     pkg-config --libs-only-L uuid
     pkg-config --version
     pkg-config --print-provides uuid
