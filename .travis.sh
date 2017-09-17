@@ -256,7 +256,7 @@ build_tomato()
     uname -i
     # ls -l /usr/lib64/pkgconfig/
     echo =============== lib =====================
-    ls -l /usr/lib/pkgconfig/
+    # ls -l /usr/lib/pkgconfig/
 
     cat /usr/lib/pkgconfig/uuid.pc
 
@@ -271,20 +271,20 @@ build_tomato()
     pkg-config --libs-only-L uuid
     pkg-config  --cflags uuid
     pkg-config  --static --cflags uuid
-    ls -l /usr/include
+    # ls -l /usr/include
     echo ================= uuid2 =====================
-    ls -l /usr/include/uuid/
+    # ls -l /usr/include/uuid/
     echo ================= uuid lib =====================
     # locate libuuid
-    ls -l /usr/lib
+    # ls -l /usr/lib
     
     echo ================= uuid lib 2 =====================
     # locate libuuid
-    ls -l /lib/x86_64-linux-gnu/
+    # ls -l /lib/x86_64-linux-gnu/
 
     echo ================= uuid lib 3 =====================
     # locate libuuid
-    ls -l /lib
+    # ls -l /lib
 
     
     # quick hack
