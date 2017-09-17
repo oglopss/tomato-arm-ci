@@ -260,7 +260,7 @@ build_tomato()
 
     cat /usr/lib/pkgconfig/uuid.pc
 
-    sudo ln -sf /usr/lib/libuuid.so.1 /usr/lib/libuuid.so
+    # sudo ln -sf /usr/lib/libuuid.so.1 /usr/lib/libuuid.so
 
     pkg-config --libs-only-L uuid
     pkg-config --version
