@@ -40,12 +40,11 @@ rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x
 # sudo apt-get install -y build-essential apt-utils libncurses5 libncurses5-dev m4 bison flex libstdc++6-4.4-dev g++-4.4 g++ libtool sqlite gcc g++ binutils patch bzip2 flex bison make gettext unzip zlib1g-dev autoconf libc6 gperf g++-4.4-multilib autopoint shtool autogen mtd-utils gcc-multilib gconf-editor lib32z1-dev pkg-config libssl-dev libxml2-dev make intltool libglib2.0-dev libstdc++5 texinfo dos2unix xsltproc libnfnetlink0 libcurl4-openssl-dev libxml2-dev libgtk2.0-dev libnotify-dev libevent-dev mc gawk libelf1:i386
 
 # fake uuid
-sudo mkdir /tt_include 
-sudo cp -r /usr/include/uuid /tt_include 
+# sudo mkdir /tt_include 
+# sudo cp -r /usr/include/uuid /tt_include 
 
-sudo mkdir /tt_lib
-sudo cp -r /lib/x86_64-linux-gnu/libuuid* /tt_lib 
-
+# sudo mkdir /tt_lib
+# sudo cp -r /lib/x86_64-linux-gnu/libuuid* /tt_lib 
 
 echo ========== bison ==========
 apt-cache showpkg bison
@@ -275,8 +274,8 @@ build_tomato()
     # ls -l /usr/include
     echo ================= uuid2 =====================
     # ls -l /usr/include/uuid/
-    ls -l /tt_include 
-    ls -l /tt_lib
+    # ls -l /tt_include 
+    # ls -l /tt_lib
     echo ================= uuid lib =====================
     # locate libuuid
     ls -l /usr/lib
