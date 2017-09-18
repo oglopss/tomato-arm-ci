@@ -66,8 +66,8 @@ addons:
             # - uuid-runtime
             - libltdl-dev
             # for miniupnpd
-            - libiptc-dev
-            - iptables-dev
+            # - libiptc-dev
+            # - iptables-dev
             
 
 # Handle git submodules yourself
