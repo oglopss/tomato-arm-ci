@@ -275,6 +275,8 @@ build_tomato()
     # ls -l /usr/include
     echo ================= uuid2 =====================
     # ls -l /usr/include/uuid/
+    tree /tt_include 
+    tree /tt_lib
     echo ================= uuid lib =====================
     # locate libuuid
     ls -l /usr/lib
