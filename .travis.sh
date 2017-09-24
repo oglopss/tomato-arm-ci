@@ -173,10 +173,10 @@ cd ~
 wget https://downloads.sourceforge.net/project/libuuid/libuuid-1.0.3.tar.gz
 tar xf libuuid-1.0.3.tar.gz
 cd libuuid-1.0.3
-sh configure --prefix /usr
+# sh configure --prefix /usr
+CC=arm-uclibc-gcc CXX=arm-uclibc-g++ AR=arm-uclibc-ar RANLIB=/opt/brcm-arm/bin/arm-uclibc-ranlib ./configure --host=mipsel-uclibc-linux --prefix=/uuid-install
 make
 sudo  make install
-
 
 # cd ~
 # wget https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
