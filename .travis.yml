@@ -19,12 +19,14 @@ cache:
     directories:
         - $HOME/src
         - $HOME/x-tools
-        # - $HOME/zlib-install
-        # - $HOME/openssl-install
-        # - $HOME/pcre-install
-        # - $HOME/libsodium-install
-        # - $HOME/mbedtls-install
-        # - $HOME/libev-install
+        - $HOME/tomato-arm
+        - $HOME/automake-1.11
+        - $HOME/automake-1.15
+        - $HOME/automake-1.13.4
+        - $HOME/autoconf-2.63
+        - $HOME/autoconf-2.69
+        - $HOME/libtool-2.4.6
+        - $HOME/libuuid-1.0.3
 
 
 # Installing needed dependencies
