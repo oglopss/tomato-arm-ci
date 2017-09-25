@@ -98,7 +98,7 @@ env:
         - TT_BUILD=ac68e
         # - TT_BUILD=ac68z
         - TT_BUILD=n18e
-        - TT_BUILD=n18z
+        # - TT_BUILD=n18z
         - TT_BUILD=r7000e
 
         - TT_BUILD=dir868l
@@ -106,7 +106,7 @@ env:
         - TT_BUILD=r7000e
         # - TT_BUILD=r7000z
         - TT_BUILD=r6400e
-        - TT_BUILD=r6400z
+        # - TT_BUILD=r6400z
         - TT_BUILD=r7000init
         - TT_BUILD=r6250init
         - TT_BUILD=r6300v2init
@@ -115,13 +115,13 @@ env:
         - TT_BUILD=r1do
 
         - TT_BUILD=ws880e
-        - TT_BUILD=ws880z
+        # - TT_BUILD=ws880z
 
         - TT_BUILD=wzr1750e
-        - TT_BUILD=wzr1750z
+        # - TT_BUILD=wzr1750z
 
         - TT_BUILD=ea6700e
-        - TT_BUILD=ea6700z
+        # - TT_BUILD=ea6700z
     
     global:
         - secure: MU4rMTYYHd8YZChUDNcfyEnHO9v4h45oPhl5FDLnZ7mGMSyQOxWaVzEqCBXBQDTbF0kN1guF4aBydCrILDkhHk/KZ3313nQBdhyjJccxhwDcJMmZZ+tbRpquInLTEQxQyG3XZ4DRm4nQRYp69AJoaWth6uWAR+VXOL57ub19Yt/wAB6bJ6NOsbR5C6sAL7xeZ0k9UbZleHVO1lpWdFofYfEqwemQ7VHWz9xYE7hAatFgUWoGnyA8ju7R3NnsEw5cksXicyU/R7EGDdN4BRdgj/Aqy0TsitJlLl7WfkpmqLgkn8L6ad3UdojPw3mb/LOQ9q8hHMCwXOtJAV0jWXXERlQjaNNACIis590cYoE3/LtsJfYpnD5F8t6fbVyUjval0mGx9jx81EEyzi+N4AqWLGIscnuR3ZgbW+bUlgLJ5Vm5B70bt2Cs4YaPLWqNLxrojDdjyFMr8CJzsOiBASZmj3wuCWnV+hyRnwZ/Eo1a0RHkuXy+6DbqfcunLIzATo4P0xAfVHhH1XtaqCu5NXXVtsvAK3AlesAW24ozXi726RXwz3b95rYQTgf9Ho+bP7vzD+I496xHFRu/Rceko+4isAqr274meEFw1Vzz5tUslWcmkYL7r7ve3pmmxbOguy25J5C2Z/Jov/h6FR07pK3TFtK281KCGcxJgQFis8oTErE=
