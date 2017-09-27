@@ -17,15 +17,21 @@
   
   echo ===== about to clone ctng-ss-jekyll ===============
   echo 
-  x=$[ ( $RANDOM % 25 )  + 10 ]s
-  echo sleeping $x
-  sleep $x
+  if [ -z $1 ]; then
+    x=$[ ( $RANDOM % 25 )  + 10 ]s
+    echo sleeping $x
+    sleep $x
+  fi
   
   #using token clone gh-pages branch
-  git clone --depth 1 --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oglopss/tomato-arm-ci-jekyll.git  gh-pages-$TT_BUILD > /dev/null
 
+  if [ ! -d "gh-pages-repo" ]; then  
 
-  cd gh-pages-$TT_BUILD
+    git clone --depth 1 --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oglopss/tomato-arm-ci-jekyll.git  gh-pages-repo > /dev/null
+  fi
+
+  cd gh-pages-repo
+
 
   # update ss.yml as well
   echo ======== show $TT_BUILD =======
@@ -38,6 +44,18 @@
 
   echo ============= print ss.yml before push changes =============
   cat ./ss.yml
+
+echo  =========== argument: [$1]
+if [ ! -z $1 ]; then
+  echo Trying to figure out current build
+  buildstr=$(head -n1 ./ss.yml)
+  arr=(${buildstr})
+  export TRAVIS_BUILD_NUMBER=${arr[1]}
+  echo current build ${arr[1]}
+
+fi
+
+# exit 1
 
 push_changes()
 {
@@ -75,7 +93,7 @@ push_changes()
   cat ./ss.yml
 
     #go into directory and copy data we're interested in to that directory
-  cd $HOME/gh-pages-$TT_BUILD
+  cd $HOME/gh-pages-repo
   mkdir -p download && cd download
 
   # -t makes sure you get the last modified trx, some builds have more than one trx files
@@ -118,7 +136,7 @@ push_changes()
     fi
   fi
 
-  cd $HOME/gh-pages-$TT_BUILD/download
+  cd $HOME/gh-pages-repo/download
 
   if [ -f $image/$fw ]; then
     cp -Rf $image/$fw .

@@ -35,7 +35,7 @@ git clone --depth 1 -b v140-arm https://github.com/oglops/tomato-arm-gui.git
 
 sudo ln -s ~/tomato-arm/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3 /opt/brcm-arm
 
-rsync -rpv --ignore-times -C ./tomato-arm-gui/*  ./tomato-arm/release/src-rt-6.x.4708/router/www/ 
+rsync -rpv --ignore-times -C ~/tomato-arm-gui/*  ~/tomato-arm/release/src-rt-6.x.4708/router/www/ 
 
 # sudo apt-get install -y build-essential apt-utils libncurses5 libncurses5-dev m4 bison flex libstdc++6-4.4-dev g++-4.4 g++ libtool sqlite gcc g++ binutils patch bzip2 flex bison make gettext unzip zlib1g-dev autoconf libc6 gperf g++-4.4-multilib autopoint shtool autogen mtd-utils gcc-multilib gconf-editor lib32z1-dev pkg-config libssl-dev libxml2-dev make intltool libglib2.0-dev libstdc++5 texinfo dos2unix xsltproc libnfnetlink0 libcurl4-openssl-dev libxml2-dev libgtk2.0-dev libnotify-dev libevent-dev mc gawk libelf1:i386
 
@@ -243,6 +243,9 @@ ls /usr/share/aclocal
 
 build_tomato()
 {
+
+    rsync -rpv --ignore-times -C ~/tomato-arm-gui/*  ~/tomato-arm/release/src-rt-6.x.4708/router/www/
+
     echo ================= BROADCOM_SDK =====================
     echo $BROADCOM_SDK
     
@@ -257,9 +260,9 @@ build_tomato()
     echo =============== lib =====================
     # ls -l /usr/lib/pkgconfig/
 
-    cat /usr/lib/pkgconfig/uuid.pc
+    # cat /usr/lib/pkgconfig/uuid.pc
 
-    sudo ln -sf /usr/lib/libuuid.so.1 /usr/lib/libuuid.so
+    # sudo ln -sf /usr/lib/libuuid.so.1 /usr/lib/libuuid.so
 
     # pkg-config --libs-only-L uuid
     # pkg-config --version
@@ -340,29 +343,37 @@ build_tomato()
     elif [ "$TT_BUILD" == "hg32064k" ] || [ "$TT_BUILD" == "hg320" ]; then
         make V1=RT-N5x-CN- V2=-140-hg320  $TT_BUILD > /dev/null &
     else
-        make V1=RT-N5x-CN- V2=-140 $TT_BUILD > /dev/null  &
+        if [ -n "$TRAVIS" ]; then
+            make V1=RT-N5x-CN- V2=-140 $TT_BUILD > /dev/null  &
+        else
+            # rm ~/$TT_BUILD.txt ; time make V1=RT-N5x-CN- V2=-140 $TT_BUILD | tee ~/$TT_BUILD.txt
+            time make V1=RT-N5x-CN- V2=-140 $TT_BUILD
+        fi
     fi
     
-    local build_pid=$!
+    if [ -n "$TRAVIS" ]; then
 
-    # Start a runner task to print a "still running" line every 5 minutes
-    # to avoid travis to think that the build is stuck
-    {
-        while true
-        do
-            sleep 300
-            printf "Crosstool-NG is still running ...\r"
-        done
-    } &
-    local runner_pid=$!
+        local build_pid=$!
 
-    # Wait for the build to finish and get the result
-    wait $build_pid 2>/dev/null 
-    local result=$?
+        # Start a runner task to print a "still running" line every 5 minutes
+        # to avoid travis to think that the build is stuck
+        {
+            while true
+            do
+                sleep 300
+                printf "Crosstool-NG is still running ...\r"
+            done
+        } &
+        local runner_pid=$!
 
-    # Stop the runner task
-    kill $runner_pid
-    wait $runner_pid 2>/dev/null
+        # Wait for the build to finish and get the result
+        wait $build_pid 2>/dev/null 
+        local result=$?
+
+        # Stop the runner task
+        kill $runner_pid
+        wait $runner_pid 2>/dev/null
+    fi
 
     echo ====== result =========
    # ls -l ~/tomato/release/image
